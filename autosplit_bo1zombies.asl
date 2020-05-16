@@ -75,6 +75,7 @@ startup
       new Tuple<int, int>(5, 190),		// kino
       new Tuple<int, int>(10, 190),		// five
       new Tuple<int, int>(15, 50),		// dead ops
+	  new Tuple<int, int>(20, 580),       // ascencion
       new Tuple<int, int>(28, 190),		// call of the dead
       new Tuple<int, int>(44, 190),		// shangri la
       new Tuple<int, int>(76, 195),		// moon
