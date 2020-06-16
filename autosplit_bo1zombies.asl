@@ -36,6 +36,7 @@ startup
 	settings.Add("Level3", true, "Split on level 3", "Rounds");
 	settings.Add("Level4", true, "Split on level 4", "Rounds");
 	settings.Add("Level5", true, "Split on level 5", "Rounds");
+	settings.Add("Level10", true, "Split on level 10", "Rounds");
 	settings.Add("Level15", true, "Split on level 15", "Rounds");
 	settings.Add("Level30", true, "Split on level 30", "Rounds");
 	settings.Add("Level50", true, "Split on level 50", "Rounds");
@@ -121,16 +122,24 @@ split
 			// wait untill level appears on screen
 			if (diff > 55)
 			{
-				print(vars.current_level.ToString() + " --- " + vars.last_level_split.ToString());
+				print(vars.last_level_split.ToString() + " --> " + vars.current_level.ToString());
 				vars.last_level_split = vars.current_level;
 				
 				int lvl_to_check = vars.current_level;
-				
+				print("checking level: " + lvl_to_check.ToString());
 				if (settings["Rounds"]) 
 				{  
+					print("Round splitting enabled!");
 					string toCheck = "Level"+lvl_to_check.ToString();
-					if (settings[toCheck]) 
-					return true;
+					print("To check: " + toCheck);
+					if (settings[toCheck]) {
+						print("Setting enabled!");
+						return true;
+					}
+					else
+					{
+						print("Setting disabled!");
+					}
 				}
 			}
 		}
